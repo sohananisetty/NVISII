@@ -27,7 +27,7 @@ else:
 # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # show an interactive window, and use "lazy" updates for faster object creation time 
-nvisii.initialize(headless=False, lazy_updates=True)
+nvisii.initialize(headless=True, lazy_updates=True)
 
 if not opt.noise is True: 
     nvisii.enable_denoiser()
@@ -52,7 +52,7 @@ nvisii.set_camera_entity(camera)
 # Setup bullet physics stuff
 seconds_per_step = 1.0 / 240.0
 frames_per_second = 30.0
-physicsClient = p.connect(p.GUI) # non-graphical version
+physicsClient = p.connect(p.DIRECT) # non-graphical version
 p.setGravity(0,0,-10)
 
 # Lets set the scene
